@@ -27,7 +27,7 @@ await client.execute(
 )
 // </resources>
 
-// <upsert>
+// <insert>
 const item = {
   id: '68719518371',
   name: 'Kiama classic surfboard'
@@ -40,6 +40,6 @@ await client.execute(
     item.name
   ]
 )
-// </upsert>
+// </insert>
 
 process.exit()
