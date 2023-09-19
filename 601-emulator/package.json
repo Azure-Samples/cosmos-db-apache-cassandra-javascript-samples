@@ -1,0 +1,10 @@
+{
+    "main": "app.js",
+    "type": "module",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "cassandra-driver": "^4.7.0"
+    }
+}

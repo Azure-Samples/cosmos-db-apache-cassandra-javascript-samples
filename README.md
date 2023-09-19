@@ -1,57 +1,55 @@
-# Project Name
-
-(short, 1-3 sentenced, description of the project)
-
-## Features
-
-This project framework provides the following features:
-
-* Feature 1
-* Feature 2
-* ...
-
-## Getting Started
-
-### Prerequisites
-
-(ideally very short, if any)
-
-- OS
-- Library version
-- ...
-
-### Installation
-
-(ideally very short)
-
-- npm install [package name]
-- mvn install
-- ...
-
-### Quickstart
-(Add steps to get up and running quickly)
-
-1. git clone [repository clone url]
-2. cd [repository name]
-3. ...
+# Azure Cosmos DB for Apache Cassandra client library samples for JavaScript
 
 
-## Demo
+## Getting started
 
-A demo app is included to show how to use the project.
+This repo has a [devcontainer](https://containers.dev) environment making it easy to get started.
 
-To run the demo, follow these steps:
 
-(Add steps to start up the demo)
+### Run the app
 
-1.
-2.
-3.
+Configure your Azure Cosmos DB credentials as environment variables.
 
-## Resources
+```bash
+export COSMOS_ENDPOINT="<cosmos-account-URI>"
+export COSMOS_KEY="<cosmos-account-PRIMARY-KEY>"
+```
 
-(Any additional resources or related projects)
+> **💡 TIP**: If you don't have an Azure Cosmos DB account, [create a free account](https://cosmos.azure.com/try/).
 
-- Link to supporting information
-- Link to similar sample
-- ...
+Run the quickstart sample app using the [`cassandra-driver`](https://www.npmjs.com/package/cassandra-driver) package from NPM.
+
+```bash
+cd 001-quickstart/
+npm install cassandra-driver
+npm run start
+```
+
+### Validate any changes you make
+
+If you change the code, run the linter.
+
+```bash
+cd ./
+npm install eslint-config-standard --no-save
+```
+
+```bash
+cd ./001-quickstart/
+npx eslint .
+```
+
+### Troubleshooting certificate errors
+
+If you use a self-signed certificate (emulator, Docker, etc.), you may need to disable Node's validation:
+
+```javascript
+const client = new Client({
+  ...,
+  ...,
+  ...,
+  sslOptions: {
+    rejectUnauthorized: false
+  }
+})
+```
