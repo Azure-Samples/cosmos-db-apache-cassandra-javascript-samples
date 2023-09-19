@@ -5,6 +5,6 @@
         "start": "node app.js"
     },
     "dependencies": {
-        "cassandra-driver": "^4.7.0"
+        "cassandra-driver": "^4.*"
     }
 }
